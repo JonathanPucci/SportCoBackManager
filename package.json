@@ -17,6 +17,8 @@
     "@angular/common": "^8.2.14",
     "@angular/compiler": "^8.2.14",
     "@angular/compiler-cli": "^8.2.14",
+    "@angular-devkit/build-angular": "~0.803.24",
+    "@angular/cli": "^8.3.25",
     "@angular/core": "^8.2.14",
     "@angular/forms": "^8.2.14",
     "@angular/language-service": "^8.2.14",
@@ -41,8 +43,6 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.803.24",
-    "@angular/cli": "^8.3.25",
     "codelyzer": "^5.1.2",
     "express": "^4.16.2",
     "http-proxy": "^1.16.2",
