@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+    "target": "https://sportcoback.herokuapp.com",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
