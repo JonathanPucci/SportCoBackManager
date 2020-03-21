@@ -2,6 +2,14 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import "rxjs/add/operator/toPromise";
 
+interface ResFromApi {
+    data : Array<listFromApi>
+}
+
+interface listFromApi {
+    data : Array<Object>
+}
+
 @Injectable()
 export class EntityService {
   constructor(private http: HttpClient) {}
@@ -11,14 +19,13 @@ export class EntityService {
       .get("/api/" + name + "/")
       .toPromise()
       .then(res => {
-        let entities = res;
+        let entities = (<ResFromApi>res).data;
         var properties = [];
-        console.log(res);
-        /*if (entities.length > 0) {
-          for (var prop in res.data[0]) {
+         if(entities.length > 0) {
+          for (var prop in (<ResFromApi>res).data[0]) {
             properties.push(prop);
           }
-        }*/
+        }
         return { entities: entities, properties: properties };
 
         console.log(res);
