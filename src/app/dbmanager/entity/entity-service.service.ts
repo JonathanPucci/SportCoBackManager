@@ -1,24 +1,27 @@
 import { Injectable } from "@angular/core";
-import { Http } from "@angular/http";
+import { HttpClient } from "@angular/common/http";
 import "rxjs/add/operator/toPromise";
 
 @Injectable()
 export class EntityService {
-  constructor(private http: Http) {}
+  constructor(private http: HttpClient) {}
 
   getAllEntities(name) {
     return this.http
       .get("/api/" + name + "/")
       .toPromise()
       .then(res => {
-        let entities = res.json().data;
+        let entities = res;
         var properties = [];
-        if (entities.length > 0) {
-          for (var prop in res.json().data[0]) {
+        console.log(res);
+        /*if (entities.length > 0) {
+          for (var prop in res.data[0]) {
             properties.push(prop);
           }
-        }
+        }*/
         return { entities: entities, properties: properties };
+
+        console.log(res);
       });
   }
 

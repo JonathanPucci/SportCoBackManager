@@ -1,13 +1,13 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const proxy = require("http-proxy-middleware");
-var apiProxy = proxy("/api", {
+const {createProxyMiddleware} = require("http-proxy-middleware");
+var apiProxy = createProxyMiddleware("/api", {
   target: "https://sportcoback.herokuapp.com/api"
 });
 app.use(
   "/api",
-  proxy({ target: "https://sportcoback.herokuapp.com/", changeOrigin: true })
+  createProxyMiddleware({ target: "https://sportcoback.herokuapp.com/", changeOrigin: true })
 );
 
 app.use(express.static(__dirname + "/dist"));
