@@ -6,7 +6,6 @@
     "ng": "ng",
     "startdev": "ng serve --proxy-config proxy.config.json",
     "start": "ng build && node server.js ",
-    "heroku-postbuild": "ng build --aot -prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
