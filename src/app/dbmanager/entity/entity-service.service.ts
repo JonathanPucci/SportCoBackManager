@@ -27,20 +27,22 @@ export class EntityService {
           }
         }
         return { entities: entities, properties: properties };
-
-        console.log(res);
       });
   }
 
-  deleteEntity(name, id) {
-    return this.http.delete("/api/" + name + "/" + id).toPromise();
+  deleteEntity(name, params) {
+    console.log("delete" + JSON.stringify(params))
+    return this.http.delete("/api/" + name + "/" + JSON.stringify(params)).toPromise();
   }
 
-  editEntity(name, entity, id) {
-    return this.http.put("/api/" + name + "/" + id, entity).toPromise();
+  editEntity(name, entity) {
+    console.log("edit" + JSON.stringify(entity))
+    return this.http.put("/api/" + name + "/", entity).toPromise();
   }
 
   addEntity(name, entity) {
+    console.log("create"+ JSON.stringify(entity))
+
     return this.http.post("/api/" + name + "/", entity).toPromise();
   }
 }

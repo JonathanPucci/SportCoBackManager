@@ -60,8 +60,7 @@ export class EntityComponent implements OnInit {
       this.entityService
         .editEntity(
           this.name,
-          this.entities[i],
-          this.entities[i][this.properties[0]]
+          this.entities[i]
         )
         .then(() => {
           this.getData();
@@ -71,13 +70,20 @@ export class EntityComponent implements OnInit {
       this.entityService.addEntity(this.name, this.entities[i]).then(() => {
         this.getData();
         this.editing[i] = false;
+        this.adding = false;
         this.entities.pop();
       });
     }
   }
 
   deleteEntity(i) {
-    let id = this.entities[i][this.properties[0]];
-    this.entityService.deleteEntity(this.name, id).then(any => this.getData());
+    let entity = this.entities[i];
+    let params = entity
+    // var params = this.properties[0].toLowerCase() + "=" + entity[this.properties[0]];
+    // switch(this.name){
+    //   case "eventparticipant":
+    //     params += "&event_id=" + entity['Event_ID']
+    // }
+    this.entityService.deleteEntity(this.name, params).then(any => this.getData());
   }
 }
