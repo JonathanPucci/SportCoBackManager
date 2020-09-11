@@ -45,7 +45,7 @@
   "devDependencies": {
     "codelyzer": "^5.1.2",
     "express": "^4.16.2",
-    "http-proxy": "^1.16.2",
+    "http-proxy": "^1.18.1",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "^4.4.1",
