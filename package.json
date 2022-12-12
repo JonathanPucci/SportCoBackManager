@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "codelyzer": "^5.1.2",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "http-proxy": "^1.16.2",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
